@@ -16,7 +16,7 @@ class SearchBarContainer extends Component {
     const { currentSearchFilter } = this.state
     let updatedState = {}
 
-    if(currentSearchFilter != upcomingSearchFilter) {
+    if(currentSearchFilter !== upcomingSearchFilter) {
       updatedState = {
         customerId: '',
         policyId: '',

@@ -6,7 +6,7 @@ import { layoutConfig } from './chartConfigs.js';
 class ChartVisualiser extends Component {
   getMode = (chartType) => {
     let mode = 'lines+markers'
-    if(chartType == 'scatter') {
+    if(chartType === 'scatter') {
       mode = 'markers'
     }
     return mode;

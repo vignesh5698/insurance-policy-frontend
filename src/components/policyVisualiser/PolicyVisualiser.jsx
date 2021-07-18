@@ -31,7 +31,7 @@ class PolicyVisualiser extends Component {
   };
   
   async componentDidUpdate(prevProps, prevState) {
-    if(prevState.subFilter != this.state.subFilter) {
+    if(prevState.subFilter !== this.state.subFilter) {
       await this.filterPoliciesByQuery()
     }
   }
@@ -45,7 +45,7 @@ class PolicyVisualiser extends Component {
   
   onChangeFilter = (event) => {
     const filter = event.target.value
-    const subFilter = filter == 'monthly' ? '2018-1' : 'North';
+    const subFilter = filter === 'monthly' ? '2018-1' : 'North';
     this.setState({ filter, subFilter });
   }
 
@@ -101,8 +101,8 @@ class PolicyVisualiser extends Component {
           <Radio.Button value="region">Region</Radio.Button>
           {/* {filter == 'monthly' ? this.renderMonths() : this.renderRegions()} */}
         </Radio.Group>
-        {filter == 'monthly' && this.renderMonths()}
-        {filter == 'region' && this.renderRegions()}
+        {filter === 'monthly' && this.renderMonths()}
+        {filter === 'region' && this.renderRegions()}
         {this.renderChartTypes()}
       </div> 
     )

@@ -23,7 +23,7 @@ class PolicyData extends Component {
   async componentDidUpdate(prevProps) {
     const { searchFilter, searchPhrase } = this.props
 
-    if((prevProps.searchFilter != searchFilter) || (prevProps.searchPhrase != searchPhrase)) {
+  if((prevProps.searchFilter !== searchFilter) || (prevProps.searchPhrase !== searchPhrase)) {
       this.setState({ showAlert: false, showSkeleton: true, policyData: {} })
       const policyData = await this.datasource.getPolicyData(searchFilter, searchPhrase)
 

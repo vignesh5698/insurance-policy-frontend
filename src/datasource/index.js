@@ -10,7 +10,7 @@ class Datasource {
       return null;
     }
 
-    const isFilteredByPolicy = searchFilter == 'policyId'
+    const isFilteredByPolicy = searchFilter === 'policyId'
     const getPolicyUrl = `${BASEURL}/${isFilteredByPolicy ? 'policy' : 'customer'}/${searchPhrase}`
 
     const response = await axios.get(getPolicyUrl);
@@ -26,7 +26,7 @@ class Datasource {
   }
 
   async filterPolicies(filter, subFilter) {
-    const query = filter == 'monthly' ? `date=${subFilter}` : `region=${subFilter}`;
+    const query = filter === 'monthly' ? `date=${subFilter}` : `region=${subFilter}`;
     const filterPolicyUrl = `${BASEURL}/filter-policy?${query}`
     const response = await axios.get(filterPolicyUrl);
 
